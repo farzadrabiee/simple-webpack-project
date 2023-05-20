@@ -41,3 +41,15 @@
 **TypeScript**
 
 ```npm install ts-loader --save-dev```
+
+**ESLint**
+
+```npm install eslint --save-dev```
+
+**Setup the ESLint**
+
+```npx eslint --init```
+
+It will install the following packages:
+```@typescript-eslint/eslint-plugin@latest, @typescript-eslint/parser@latest```
+
