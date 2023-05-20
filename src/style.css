@@ -1,0 +1,7 @@
+.beautiful-box {
+    user-select: none;
+    background-color: var(--red);
+    border: 1px solid var(--red);
+    display: flex;
+}
+/* The style */
