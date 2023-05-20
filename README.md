@@ -53,3 +53,10 @@
 It will install the following packages:
 ```@typescript-eslint/eslint-plugin@latest, @typescript-eslint/parser@latest```
 
+**Setup Test**
+
+***Install Jest***
+
+```npm install jest @types/jest jest-environment-jsdom @babel/preset-typescript --save-dev```
+
+***Add the jest.config.js file***
