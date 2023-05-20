@@ -8,14 +8,22 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 module.exports = {
-	entry: './src/index.js',
+	entry: './src/index.ts',
 	output: {
 		filename: '[name].[contenthash].js',
 		path: path.resolve(__dirname, 'dist'),
 	},
+	resolve: {
+		extensions: ['.tsx', '.ts', '.js'],
+	},
 	devtool: 'source-map',
 	module: {
 		rules: [
+			{
+				test: /\.tsx?$/,
+				use: 'ts-loader',
+				exclude: /node_modules/,
+			},
 			{
 				test: /\.js$/,
 				exclude: /node_modules/,
@@ -24,13 +32,13 @@ module.exports = {
 					options: {
 						presets: [
 							[
-							  '@babel/preset-env',
-							  {
-								targets: {
-								  chrome: '58',
-								  ie: '11',
+								'@babel/preset-env',
+								{
+									targets: {
+										chrome: '58',
+										ie: '11',
+									},
 								},
-							  },
 							],
 						]
 					},

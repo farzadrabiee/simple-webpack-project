@@ -11,10 +11,15 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(element);
 })
 
-const inputNumber1 = document.getElementById('inputNumber1');
-const inputNumber2 = document.getElementById('inputNumber2');
+const inputNumber1 = document.getElementById('inputNumber1') as HTMLInputElement;
+const inputNumber2 = document.getElementById('inputNumber2') as HTMLInputElement;
 const btnFindMax = document.getElementById('btnFindMax');
 
-btnFindMax.addEventListener('click', () => {
-    console.log(_.max([+inputNumber1.value, +inputNumber2.value]));
-})
+if (btnFindMax) {
+    btnFindMax.addEventListener('click', () => {
+        const a = +inputNumber1.value;
+        const b = +inputNumber2.value;
+        console.log(_.max([a, b]));
+        console.log(sumNumbers(a, b));
+    })
+}
